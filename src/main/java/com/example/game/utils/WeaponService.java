@@ -26,7 +26,7 @@ public class WeaponService {
         WeaponType weaponType = pickWeaponType();
         int baseDamage = randomDamage();
         AdditionalEffect additionalEffect = createAdditionalEffect();
-        String name = weaponType.name() + " of " + additionalEffect.getEffect().name();
+        String name = String.format("%s of %s", weaponType.name(), additionalEffect.getEffect().name());
         String description = String.format("%s damages enemy for %d points of physical damage as well as %d poins of %s damage", name, baseDamage, additionalEffect.getDamage(), additionalEffect.getEffect());
         return new Weapon(name, baseDamage, additionalEffect, description);
     }
